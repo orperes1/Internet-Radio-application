@@ -1,11 +1,16 @@
 #define BUFFER_SIZE				1024
 #define TIMEOUT1				300000
-#define TIMEOUT2				10
+#define TIMEOUT2				2
 #define TIMEOUT3				3
 #define TRUE					1
 #define SONG_NAME_SIZE			200
+#define SONG_DIR_SIZE			230
 #define REPLY_STRING_SIZE		1024
 #define MEGA					1000000
+#define ASK_SONG_SIZE			3
+#define UP_SONG_SIZE			SONG_NAME_SIZE +6
+#define TTL						10
+#define OPT_RATE				62500
 
 /*client state*/
 #define OFF 					0
@@ -22,7 +27,7 @@
 
 /*msg types- from server*/
 #define WELCOME 				0
-#define ANNOUNCE				1
+#define ANNOUNE					1
 #define PERMITSONG				2
 #define INVALIDCOMMAND 			3
 #define NEWSTATIONS				4
@@ -38,6 +43,17 @@
 #define ERR_TIMEOUT				2
 #define LEAVE					3
 
-/* msg lens */
-#define ASK_SONG_LEN			3
 
+/*error types for server*/
+#define HELLO_ERROR				0
+#define DUP_HELLO_ERROR			1
+#define INVALID					2
+#define WRONG_SIZE				3
+#define WRONG_ST				4
+#define UP_TIMEOUT				5
+
+/* 	MSG LEN */
+#define WELCOME_LEN				9
+#define NEWSTATIONS_LEN			3
+#define PREFIX_LEN				20
+#define PERMITSONG_LEN			2
